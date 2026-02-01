@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    var restaurant = ["Urfa","Ankara", "Old Baku", "New Baku"]
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        List {
+            ForEach(0...restaurant.count-1, id: \.self) { index in
+                HStack {
+                    Image("restaurant")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                    Text(restaurant[index])
+                }
+                
+            }
         }
-        .padding()
+        .listStyle(.sidebar)
     }
 }
 
