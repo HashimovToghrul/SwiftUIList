@@ -8,15 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    var restaurant = ["Urfa","Ankara", "Old Baku", "New Baku"]
+
+    let restaurants = [
+        Restaurant(restaurantName: "Urfa", restaurantImage: "res1"),
+        Restaurant(restaurantName: "Ankara", restaurantImage: "res2"),
+        Restaurant(restaurantName: "Baki", restaurantImage: "res3"),
+        Restaurant(restaurantName: "Qedim Qebele", restaurantImage: "res4")
+    ]
+    
     var body: some View {
         List {
-            ForEach(0...restaurant.count-1, id: \.self) { index in
+            ForEach(restaurants) { list in
                 HStack {
-                    Image("restaurant")
+                    Image(list.restaurantImage)
                         .resizable()
                         .frame(width: 50, height: 50)
-                    Text(restaurant[index])
+                    Text(list.restaurantName)
                 }
                 
             }
