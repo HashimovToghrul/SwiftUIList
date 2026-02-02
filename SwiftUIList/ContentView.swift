@@ -22,8 +22,9 @@ struct ContentView: View {
                 HStack {
                     Image(list.restaurantImage)
                         .resizable()
-                        .frame(width: 50, height: 50)
+                        .frame(width: 60, height: 60)
                     Text(list.restaurantName)
+                        .font(.system(size: 20, weight: .bold))
                 }
                 
             }
